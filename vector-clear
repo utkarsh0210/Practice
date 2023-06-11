@@ -30,6 +30,14 @@ int main ()
   std::cout<<"\nAfter clear, the vector has these elements:\n";
   for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
     std::cout<<*it<<" ";
+    //erase an element
+    vectorInts.erase(vectorInts.begin() + 4);
+  std::cout<<"\nAfter clear, the vector has these elements:\n";
+  for (it = vectorInts.begin(); it != vectorInts.end(); ++it)
+    std::cout<<*it<<" ";
+
+  return 0;
+}
 
   return 0;
 }
