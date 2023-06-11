@@ -6,7 +6,7 @@ int main ()
   std::vector<int> vFloat;
   std::cout<<"vFloat has "<<vFloat.size()<<" elements\n";
   
-  //Changing the size of vectorInts to 10
+  
   //TODO: Change the size of vFloat to 10 elements
   vFloat.resize(10);
   
