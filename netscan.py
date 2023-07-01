@@ -1,19 +1,24 @@
+#!/usr/bin/env python
+
+import sys
 from scapy.all import *
 from prettytable import PrettyTable
 from mac_vendor_lookup import MacLookup
 from argparse import ArgumentParser
+from scapy.layers.l2 import Ether
+from scapy.layers.l2 import ARP
 from sys import exit,stderr,argv
 
 
 class NetworkScanner():
     def __init__(self,host):
-        for host in hosts:
-            self.host = host
-            self.alive = {}
-            self.create_packet()
-            self.send_packet()
-            self.get_alive()
-            self.print_alive()
+        #for host in hosts:
+        self.host = host
+        self.alive = {}
+        self.create_packet()
+        self.send_packet()
+        self.get_alive()
+        self.print_alive()
 
 
     def create_packet(self):
@@ -54,5 +59,7 @@ def get_args():
         parser.print_help(sys.stderr)
         sys.exit(1)
     return arg.hosts
+
 hosts = get_args()
-NetworkScanner(hosts)
+for host in hosts:
+    NetworkScanner(host)
